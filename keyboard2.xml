@@ -32,31 +32,13 @@
       <constant/>
     </output>
     <!-- start dupes -->
-    <report_count>5</report_count>
+    <report_count>2048</report_count>
     <report_size>1</report_size>
     <usage_page>led<!-- LEDs (08h) --></usage_page>
-    <usage_minimum>01</usage_minimum>
-    <usage_maximum>05</usage_maximum>
+    <usage_minimum>02</usage_minimum>
+    <usage_maximum>02</usage_maximum>
     <output>
       <variable/>
-    </output>
-    <report_count>1</report_count>
-    <report_size>3</report_size>
-    <output>
-      <constant/>
-    </output>
-    <report_count>5</report_count>
-    <report_size>1</report_size>
-    <usage_page>led<!-- LEDs (08h) --></usage_page>
-    <usage_minimum>01</usage_minimum>
-    <usage_maximum>05</usage_maximum>
-    <output>
-      <variable/>
-    </output>
-    <report_count>1</report_count>
-    <report_size>3</report_size>
-    <output>
-      <constant/>
     </output>
     <!--end dupes-->
     <report_count>6</report_count>
