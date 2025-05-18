@@ -22,8 +22,8 @@ int main1(int argc, char** argv) {
                 .uniq = {0},
                 .rd_size = sizeof(kDescriptor),
                 .bus = BUS_USB,
-                .vendor = 0x0596,
-                .product = 0x0500,  // USB_DEVICE_ID_3M1968
+                .vendor = 0x056a,
+                .product = 0x00d0,  // BAMBOO_TOUCH
                 .version = 0x1234,
                 .country = 0,
             },
@@ -41,11 +41,9 @@ int main1(int argc, char** argv) {
     switch (in_event.type) {
       case UHID_START:
         fprintf(stderr, "start\n");
-	break;
+        break;
       case UHID_OPEN:
         fprintf(stderr, "open\n");
-	close(fd);
-	return 0;
         break;
       case UHID_STOP:
         fprintf(stderr, "stop\n");
@@ -67,7 +65,7 @@ int main1(int argc, char** argv) {
                                    .u.get_report_reply = {
                                        .id = in_event.u.get_report.id,
                                        .err = 0,
-                                       .size = argc == 1? 0: 1,
+                                       .size = argc == 1 ? 0 : 1,
                                    }};
         uint8_t outdata = argc == 2 ? atoi(argv[1]) : 0;
         fprintf(stderr, "returning data=%x\n", outdata);
@@ -76,15 +74,19 @@ int main1(int argc, char** argv) {
         break;
       }
       case UHID_SET_REPORT:
-        fprintf(stderr, "set report\n");
+        fprintf(stderr, "set report id=%x rnum=%x rtype=%x rsize=%x\n",
+                in_event.u.set_report.id, in_event.u.set_report.rnum,
+                in_event.u.set_report.rtype, in_event.u.set_report.size);
+        for (int i = 0; i < in_event.u.set_report.size; i++) {
+          fprintf(stderr, "%x ", in_event.u.set_report.data[i]);
+        }
+        fprintf(stderr, "\n");
         break;
       default:
         printf("unknown event %d\n", in_event.type);
     }
   }
+  return 0;
 }
 
-int main(int argc, char** argv) {
-	main1(argc, argv);
-	main1(1, argv);
-}
+int main(int argc, char** argv) { main1(argc, argv); }

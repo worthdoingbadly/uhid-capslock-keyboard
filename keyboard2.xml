@@ -1,10 +1,19 @@
 <?xml version="1.0"?>
 <descriptor xmlns="http://digimend.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://digimend.sourceforge.net hidrd.xsd">
-  <usage_page>desktop<!-- Generic desktop controls (01h) --></usage_page>
-  <usage>desktop_keyboard<!-- Keyboard (06h, application collection) --></usage>
+  <usage_page>digitizer<!-- Generic desktop controls (01h) --></usage_page>
+  <usage>digitizer_pen<!-- Keyboard (06h, application collection) --></usage>
   <COLLECTION type="application">
-    <usage_page>digitizer<!-- Keyboard/keypad (07h) --></usage_page>
+    <usage_page>ff0d</usage_page>
+    <usage>1002</usage><!-- WACOM_HID_WD_DATAMODE -->
+    <logical_minimum>0</logical_minimum>
+    <logical_maximum>0</logical_maximum>
+    <report_size>1</report_size>
+    <report_count>1</report_count>
+    <feature>
+	    <variable/>
+    </feature>
 	  <!-- https://stackoverflow.com/q/51191660 -->
+  <usage_page>digitizer<!-- Generic desktop controls (01h) --></usage_page>
     <usage>digitizer_contact_count_maximum<!-- Keyboard left control (E0h, dynamic value) --></usage>
     <logical_minimum>0</logical_minimum>
     <logical_maximum>0</logical_maximum>
@@ -47,5 +56,11 @@
     <usage_minimum>keyboard_none<!-- No event (00h, selector) --></usage_minimum>
     <usage_maximum>FF</usage_maximum>
     <input/>
+    <report_id>2</report_id>
+    <report_size>8</report_size>
+    <report_count>4095</report_count>
+    <feature>
+	    <constant/>
+    </feature>
   </COLLECTION>
 </descriptor>

@@ -1,6 +1,13 @@
-0x05, 0x01,         /*  Usage Page (Desktop),               */
-0x09, 0x06,         /*  Usage (Keyboard),                   */
+0x05, 0x0D,         /*  Usage Page (Digitizer),             */
+0x09, 0x02,         /*  Usage (Pen),                        */
 0xA1, 0x01,         /*  Collection (Application),           */
+0x06, 0x0D, 0xFF,   /*      Usage Page (FF0Dh),             */
+0x0A, 0x02, 0x10,   /*      Usage (1002h),                  */
+0x14,               /*      Logical Minimum (0),            */
+0x24,               /*      Logical Maximum (0),            */
+0x75, 0x01,         /*      Report Size (1),                */
+0x95, 0x01,         /*      Report Count (1),               */
+0xB1, 0x02,         /*      Feature (Variable),             */
 0x05, 0x0D,         /*      Usage Page (Digitizer),         */
 0x09, 0x55,         /*      Usage (Contact Count Maximum),  */
 0x14,               /*      Logical Minimum (0),            */
@@ -34,4 +41,8 @@
 0x18,               /*      Usage Minimum (None),           */
 0x29, 0xFF,         /*      Usage Maximum (FFh),            */
 0x80,               /*      Input,                          */
+0x85, 0x02,         /*      Report ID (2),                  */
+0x75, 0x08,         /*      Report Size (8),                */
+0x96, 0xFF, 0x0F,   /*      Report Count (4095),            */
+0xB1, 0x01,         /*      Feature (Constant),             */
 0xC0                /*  End Collection                      */
