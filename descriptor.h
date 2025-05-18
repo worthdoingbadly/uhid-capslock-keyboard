@@ -1,14 +1,6 @@
 0x05, 0x0D,         /*  Usage Page (Digitizer),             */
 0x09, 0x02,         /*  Usage (Pen),                        */
 0xA1, 0x01,         /*  Collection (Application),           */
-0x06, 0x0D, 0xFF,   /*      Usage Page (FF0Dh),             */
-0x0A, 0x02, 0x10,   /*      Usage (1002h),                  */
-0x14,               /*      Logical Minimum (0),            */
-0x24,               /*      Logical Maximum (0),            */
-0x75, 0x01,         /*      Report Size (1),                */
-0x95, 0x01,         /*      Report Count (1),               */
-0xB1, 0x02,         /*      Feature (Variable),             */
-0x05, 0x0D,         /*      Usage Page (Digitizer),         */
 0x09, 0x55,         /*      Usage (Contact Count Maximum),  */
 0x14,               /*      Logical Minimum (0),            */
 0x24,               /*      Logical Maximum (0),            */
