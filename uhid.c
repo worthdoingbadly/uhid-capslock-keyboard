@@ -10,7 +10,7 @@ const uint8_t kDescriptor[] = {
 #include "descriptor.h"
 };
 
-int main(int argc, char** argv) {
+int main1(int argc, char** argv) {
   int fd = open("/dev/uhid", O_RDWR);
   {
     struct uhid_event event = {
@@ -40,7 +40,12 @@ int main(int argc, char** argv) {
     }
     switch (in_event.type) {
       case UHID_START:
+        fprintf(stderr, "start\n");
+	break;
       case UHID_OPEN:
+        fprintf(stderr, "open\n");
+	close(fd);
+	return 0;
         break;
       case UHID_STOP:
         fprintf(stderr, "stop\n");
@@ -62,7 +67,7 @@ int main(int argc, char** argv) {
                                    .u.get_report_reply = {
                                        .id = in_event.u.get_report.id,
                                        .err = 0,
-                                       .size = 1,
+                                       .size = argc == 1? 0: 1,
                                    }};
         uint8_t outdata = argc == 2 ? atoi(argv[1]) : 0;
         fprintf(stderr, "returning data=%x\n", outdata);
@@ -77,4 +82,9 @@ int main(int argc, char** argv) {
         printf("unknown event %d\n", in_event.type);
     }
   }
+}
+
+int main(int argc, char** argv) {
+	main1(argc, argv);
+	main1(1, argv);
 }

@@ -5,9 +5,12 @@
 0x09, 0x55,         /*      Usage (Contact Count Maximum),  */
 0x14,               /*      Logical Minimum (0),            */
 0x24,               /*      Logical Maximum (0),            */
-0x75, 0x01,         /*      Report Size (1),                */
+0x75, 0x20,         /*      Report Size (32),               */
 0x95, 0x01,         /*      Report Count (1),               */
 0xB1, 0x02,         /*      Feature (Variable),             */
+0x75, 0x08,         /*      Report Size (8),                */
+0x96, 0xFA, 0x0F,   /*      Report Count (4090),            */
+0xB1, 0x01,         /*      Feature (Constant),             */
 0x09, 0x51,         /*      Usage (Contact Identifier),     */
 0x14,               /*      Logical Minimum (0),            */
 0x25, 0x01,         /*      Logical Maximum (1),            */

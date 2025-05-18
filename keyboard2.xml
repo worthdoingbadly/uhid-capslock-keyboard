@@ -8,9 +8,16 @@
     <usage>digitizer_contact_count_maximum<!-- Keyboard left control (E0h, dynamic value) --></usage>
     <logical_minimum>0</logical_minimum>
     <logical_maximum>0</logical_maximum>
-    <report_size>1</report_size>
+    <report_size>32</report_size>
     <report_count>1</report_count>
-	  <feature><variable/></feature>
+    <feature>
+	    <variable/>
+    </feature>
+    <report_size>8</report_size>
+    <report_count>4090</report_count>
+    <feature>
+	    <constant/>
+    </feature>
     <usage>digitizer_contact_identifier<!-- Keyboard left control (E0h, dynamic value) --></usage>
     <logical_minimum>0</logical_minimum>
     <logical_maximum>1</logical_maximum>
